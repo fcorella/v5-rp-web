@@ -1,0 +1,32 @@
+<script type="module">
+import {
+    jsonUtilsHex2Object
+} from "./json-utils.js";
+
+function post(url, params) {
+    const form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", url);
+    for(let key in params) {
+        if(params.hasOwnProperty(key)) {
+            const hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+            form.appendChild(hiddenField);
+        }
+    }
+    document.body.appendChild(form);
+    // form.submit();
+    window.onload = function () { form.submit(); }; // to bypass the Firefox bug
+}
+
+post ("{{requestEndpoint}}", {
+    sessionId: "{{sessionId}}",
+    credType: "{{credType}}",
+    attrs_hex: "{{attrs_hex}}",
+    challenge_hex: "{{challenge_hex}}",
+    callbackEndpoint: "{{callbackEndpoint}}"
+});
+
+</script>

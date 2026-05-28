@@ -1,0 +1,87 @@
+<body>
+
+<div class="container">
+
+  <div class="row mb-1">
+     <div class="col-sm-12 text-center">
+       <i>Driver's License Credential Demo</i>
+     </div>
+  </div>
+
+  <div class="row mb-4">
+     <div class="col-sm-12 text-center">
+      <h2>Bhutan Rental Cars Agency</h2>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-sm-12 text-left">
+      This is the home page of the Bhutan Rental Cars Agency.  If you
+      have an account, you can log in by entering your existing
+      username and clicking the Login button.  You will be
+      cryptographically authenticated by proof of possession of the
+      driver's license credential issued to this browser, without
+      presenting any attributes.
+    </div>
+  </div>
+
+<form action="/login" method="post">      
+
+  <div class="row mb-2">
+    <label for="currentUsernameInput" class="offset-sm-2 col-sm-4 col-form-label text-end">Your username:</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control border-dark" id="currentUsernameInput" name="username" required>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-sm-4 offset-sm-4 text-center text-danger">
+      {{error_login}}
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-sm-4 offset-sm-4 text-center">
+      <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+  </div>
+
+</form>      
+
+  <div class="row mb-2">
+    <div class="col-sm-12 text-left">
+      If you do not have an account yet, you can register by choosing
+      a username and entering it below.  You will be authenticated by
+      proof of possession of the driver's licensed credential stored
+      in this browser.  The mDL attributes "given_name",
+      "family_name", "birth_date" and "resident_address" will be
+      presented and stored with your username in your user profile.
+    </div>
+  </div>
+
+<form action="/register" method="post">
+
+  <div class="row mb-2">
+    <label for="chooseUsernameInput" class="offset-sm-2 col-sm-4 col-form-label text-end">Choose username:</label>
+    <div class="col-sm-2">
+      <input type="text" class="form-control border-dark" id="chooseUsernameInput" name="username" required>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-sm-4 offset-sm-4 text-center text-danger">
+      {{error_register}}
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <div class="col-sm-4 offset-sm-4 text-center">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+
+</form>
+
+</div>
+
+</body>

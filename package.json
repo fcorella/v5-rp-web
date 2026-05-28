@@ -1,0 +1,17 @@
+{
+    "type": "module",
+    "name": "v5-rp-web",
+    "version": "1.0.0",
+    "description": "Reling party in website registration use case for driver's license credential",
+    "main": "demo-3051.mjs",
+    "author": "Francisco Corella (https://pomcor.com)",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^2.2.2",
+        "cookie-parser": "^1.4.7",
+        "express": "^5.2.1",
+        "express-handlebars": "^8.0.3",
+        "mongodb": "^7.2.0",
+        "pjcl": "^1.0.1"
+    }
+}

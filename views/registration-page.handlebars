@@ -1,0 +1,34 @@
+<script>
+function checkRegistration() {
+    var s = "";
+
+    var unElt = document.getElementById("username");
+    var username = unElt.value.replace(/^\s+/,"").replace(/\s+$/,"");
+    unElt.value = username;
+    if (username == "") {
+        s += "Please enter your username<br>";
+    }
+
+    if (s) {
+        document.getElementById("reg-error").innerHTML = s;
+        return false;
+    }
+}
+
+</script>
+
+<h1>Registration</h1>
+
+<p>
+<span style="color: red" id="reg-error">{{error}}</span>
+</p>
+
+<form action="/register-user" method="post" onsubmit="return checkRegistration()">
+    Username:<br>
+    <input type="text" name="username" id="username">
+    <br>
+    <br>
+    <input type="submit" value="Register">
+    <br>
+    <br>
+    </form> 
